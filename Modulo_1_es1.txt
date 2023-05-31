@@ -1,0 +1,79 @@
+DATASET N°1
+
+DATASET --> data_game.csv
+TIPO --> strutturato
+FORMATO FILE --> .csv
+ARGOMENTO --> videogiochi
+
+ATTRIBUTI ----> Rank,Name,Platform,Metascore,Date,Title
+IDENTIFICATORI DI RIGA ----> Name,Title
+
+
+
+
+DATASET N°2
+
+DATASET --> metal_bands.csv
+TIPO --> strutturato
+FORMATO FILE --> .csv
+ARGOMENTO --> raccolta band metal dal 1970 ad oggi
+
+ATTRIBUTI ----> Band_name,Fans,Formed,Origin,Split,Style
+IDENTIFICATORI DI RIGA ----> Band_name,Style
+
+
+
+
+DATASET N°3
+
+DATASET --> Red_wine.csv
+TIPO --> strutturato
+FORMATO FILE --> .csv
+ARGOMENTO --> valutazione e prezzi di vini rossi nazionali e internazionali di specifiche annate
+
+ATTRIBUTI ----> Name,Country,Region,Winery,Rating,Number of Ratings,Price,Year
+IDENTIFICATORI DI RIGA ----> Name,Winery
+
+
+
+DATASET N°4
+
+
+TIPO --> non strutturato
+FORMATO FILE --> .jpg
+ARGOMENTO --> immagini commerciali filtrate da instagram periodo natalizio 2022/2023
+
+ANALISI: analizzerei principalmente un periodo specifico che va dal 01/12/22 a 24/12/22
+
+        - mi concentrerei su file di un certo FORMATO
+        - tipologia di foto 
+        - periodo specifico compreso tra 01/12/22 a 24/12/22
+        - tipo di aziende commerciali coinvolte nelle campagne
+        - prodotti maggiormente publicizzati
+        - analisi offerte e prezzi proposti sul mercato
+        - comparazione da dati appresi da analisi precedenti
+
+OBBIETTIVO: analisi trend di mercato da 01/12/22 a 24/12/22
+
+
+
+
+DATASET N°5
+
+
+TIPO --> non strutturato
+FORMATO FILE --> .mov , .mp4 
+ARGOMENTO --> video commerciali filtrati da instagram periodo natalizio 2022/2023
+
+ANALISI: analizzerei principalmente un periodo specifico che va dal 01/12/22 a 24/12/22, restando sempre su 
+         analisi di trend di mercato iniziata precedentemente con file .jpg
+
+        - tipologia di video (commerciale) 
+        - periodo specifico compreso tra 01/12/22 a 24/12/22
+        - prodotti maggiormente publicizzati
+        - analisi offerte e prezzi proposti sul mercato
+        - comparazione tra foto e video filtrati 
+        - tipo di aziende commerciali coinvolte nelle campagne
+        - comparazione da dati appresi da analisi precedenti
+
+OBBIETTIVO: analisi trend di mercato da 01/12/22 a 24/12/22
