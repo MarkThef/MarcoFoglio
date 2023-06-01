@@ -1,0 +1,54 @@
+FACCIO RIFERIMENTO OVVIAMENTE AGLI ESEMPI CITATI: ES.. USO DEI SOCIAL, NAVIGATORE, CHAT
+
+PUNTO 1
+
+    - TIPOLOGIA DATI SOCIAL NETWORK: 
+        
+        * tipo testuale
+        * dati di mobilità
+        * dati di interesse personale: imagini,video,audio,link
+
+    - TIPOLOGIA DATI NAVIGAZIONE: --in questo caso vengono usati principalmente dati GPS--
+
+        * mappe
+        * informazioni sul traffico
+        * punti di interesse
+        * indicazioni stradali
+
+    - TIPOLOGIA DATI CHAT:
+
+        * tipo testuale
+        * tipo audio
+        * tipo di interesse personale: immagini,video
+
+PUNTO 2
+
+
+    - nei primi due casi possono servire a capire trend del momento,interessi personali utenti 
+      e luoghi di interesse.
+
+    - invece nell'ultimo caso , il riguardante le chat, potrebbero essere raccolti anche dati molto più sensibili.
+
+
+PUNTO 3
+
+
+    - i primi due casi (SOCIAL E NAVIGAZIONE) gli reputo sicuramente meno sensibili dei dati che circolano in
+      chat. (in chat reputo che siano più sensibili perchè obbiettivamente l'utente medio si sente più sicuro
+      a condividere i propri dati personali sentendosi più protetto)
+
+
+PUNTO 4
+
+
+    - posso evitare solo in alcuni casi di comunicarli per scelta, per i SOCIAL viene sicuramente più facile
+      scegliere, anche nelle CHAT posso scegliere cosa condividere e comunicare.
+    - per quanto rigurda la NAVIGAZIONE invece no, se vuoi usufruire del servizio sei costretto a condividere
+      dati di mobilità.
+
+
+PUNTO 5
+
+
+    -  si, di solito è richiesto il consenso degli utenti per il trattamento dei dati personali in tutti 
+       e tre i casi
