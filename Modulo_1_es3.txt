@@ -1,4 +1,4 @@
- 											PARTE 1
+ 									PARTE 1
 
 
 
@@ -14,23 +14,23 @@
 
 	* DATI COVID 2023 - italia (dati manipolati per estrazione di dati significativi)
 
-	* CAMPI: Date_reported:		Date		TIPOLOGIA DATO
+	* CAMPI:     Date_reported:		Date		TIPOLOGIA DATO
 	 	     Country_code:		String		TIPOLOGIA DATO
 	 	     Country:			String		TIPOLOGIA DATO
 	 	     WHO_region:		String		TIPOLOGIA DATO
 	 	     New_cases:			Integer		TIPOLOGIA DATO
-	 	     Cumulative_cases:	Integer		TIPOLOGIA DATO
+	 	     Cumulative_cases:		Integer		TIPOLOGIA DATO
 	 	     New_deaths:		Integer		TIPOLOGIA DATO
-	 	     Cumulative_deaths:	Integer		TIPOLOGIA DATO
+	 	     Cumulative_deaths:		Integer		TIPOLOGIA DATO
 	 
 
 	* METADATI DESCRITTIVI:
 
 		Source						World Health Organisation (WHO)
 		Contributor					World Health Organization
-		Reference Period			January 08, 2020-May 31, 2023
+		Reference Period				January 08, 2020-May 31, 2023
 		Updated						1 June 2023
-		Expected Update Frequency	Every week
+		Expected Update Frequency			Every week
 		Location					World
 		Visibility					Public
 		License						Creative Commons Attribution for Intergovernmental Organisations
@@ -51,11 +51,11 @@
 
 	* DATI COVID 2023 - italia (dati manipolati per estrazione di dati significativi)
 
-	* CAMPI: Data:				Date		TIPOLOGIA DATO
+	* CAMPI:     Data:			Date		TIPOLOGIA DATO
 	 	     Ricoverati:		Integer		TIPOLOGIA DATO
-	 	     Terapia intensiva:	Integer		TIPOLOGIA DATO
+	 	     Terapia intensiva:		Integer		TIPOLOGIA DATO
 	 	     Ospedalizzati:		Integer		TIPOLOGIA DATO
-	 	     Totale_positivi:	Integer		TIPOLOGIA DATO
+	 	     Totale_positivi:		Integer		TIPOLOGIA DATO
 	 	     Deceduti:			Integer		TIPOLOGIA DATO
 	 	     Totale_casi:		Integer		TIPOLOGIA DATO
 
@@ -78,11 +78,11 @@
 
 	* DATI COVID 2022 - italia (dati manipolati per estrazione di dati significativi)
 
-	* CAMPI: Date:				Date		TIPOLOGIA DATO
+	* CAMPI:     Date:			Date		TIPOLOGIA DATO
 	 	     Country:			String		TIPOLOGIA DATO
 	 	     Total_cases:		Integer		TIPOLOGIA DATO
 	 	     Total_deaths:		Integer		TIPOLOGIA DATO
-	 	     Daily_new_deaths:	Integer		TIPOLOGIA DATO
+	 	     Daily_new_deaths:		Integer		TIPOLOGIA DATO
 	 
 
 	* METADATI DESCRITTIVI:
@@ -138,9 +138,9 @@
 
 	* DATI COVID 2022-2023 - italia (dati manipolati per estrazione di dati significativi)
 
-	* CAMPI: Continent:			String		TIPOLOGIA DATO
+	* CAMPI:     Continent:			String		TIPOLOGIA DATO
 	 	     Location:			String		TIPOLOGIA DATO
-	 	     Date:				Date		TIPOLOGIA DATO
+	 	     Date:			Date		TIPOLOGIA DATO
 	 	     Total_cases:		Integer		TIPOLOGIA DATO
 	 	     Total_deaths:		Integer		TIPOLOGIA DATO
 	 
@@ -162,15 +162,15 @@
 
 
 	DATA ENGINEER:  interviene nella fase inziale,si occupa della progettazione, sviluppo e gestione dei sistemi e delle infrastrutture necessarie per la raccolta, 
-					l'archiviazione, l'elaborazione.
+			l'archiviazione, l'elaborazione.
 	
 	DATA ANALYST:  interviene successivamente terminata la fase iniziale, si occupa di analizzare i dati per estrarre informazioni significative 
-					e supportare la presa di decisioni aziendali basate sui dati. 
-					Il loro ruolo principale è quello di tradurre i dati grezzi in dati utili che possono essere utilizzati ed 
-					identificare le tendenze e rispondere a domande di business specifiche.
+		       e supportare la presa di decisioni aziendali basate sui dati. 
+		       Il loro ruolo principale è quello di tradurre i dati grezzi in dati utili che possono essere utilizzati ed 
+		       identificare le tendenze e rispondere a domande di business specifiche.
 	
 	DATA SCIENTIST:  fase finale,è un professionista che applica metodi scientifici, 
-					algoritmi statistici e tecniche di machine learning per estrarre informazioni significative dai dati. 
+			 algoritmi statistici e tecniche di machine learning per estrarre informazioni significative dai dati. 
 
 	DATA JOURNALIST:  Il ruolo di un Data Journalist è quello di esplorare, analizzare e interpretare i dati per creare narrazioni informative e coinvolgenti.
 
