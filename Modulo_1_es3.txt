@@ -1,0 +1,197 @@
+ 											PARTE 1
+
+
+
+
+
+{ FONTE 1
+
+	LINK: https://data.humdata.org/dataset/coronavirus-covid-19-cases-and-deaths?force_layout=desktop
+
+	Download link: https://covid19.who.int/WHO-COVID-19-global-data.csv
+
+	* CLASSIFICAZIONE: ✪✪✪✪ 4 stelle - dotazione URI
+
+	* DATI COVID 2023 - italia (dati manipolati per estrazione di dati significativi)
+
+	* CAMPI: Date_reported:		Date		TIPOLOGIA DATO
+	 	     Country_code:		String		TIPOLOGIA DATO
+	 	     Country:		    String		TIPOLOGIA DATO
+	 	     WHO_region:		String		TIPOLOGIA DATO
+	 	     New_cases:		    Integer		TIPOLOGIA DATO
+	 	     Cumulative_cases:	Integer		TIPOLOGIA DATO
+	 	     New_deaths:		Integer		TIPOLOGIA DATO
+	 	     Cumulative_deaths:	Integer		TIPOLOGIA DATO
+	 
+
+	* METADATI DESCRITTIVI:
+
+		Source						World Health Organisation (WHO)
+		Contributor					World Health Organization
+		Reference Period			January 08, 2020-May 31, 2023
+		Updated						1 June 2023
+		Expected Update Frequency	Every week
+		Location					World
+		Visibility					Public
+		License						Creative Commons Attribution for Intergovernmental Organisations
+		Methodology					Registry	
+		Tags						AFFECTED POPULATIONCOVID-19DISEASEEPIDEMICS-OUTBREAKSFATALITIESHEALTH
+		File Format					CSV,  GEOSERVICE
+
+}
+
+
+
+{ FONTE 2
+
+	LINK: https://lab24.ilsole24ore.com/coronavirus/
+
+
+	* CLASSIFICAZIONE: ✪✪✪✪ 4 stelle - dotazione URI	FILE .CSV
+
+	* DATI COVID 2023 - italia (dati manipolati per estrazione di dati significativi)
+
+	* CAMPI: Data:		        Date	    TIPOLOGIA DATO
+	 	     Ricoverati:		Integer		TIPOLOGIA DATO
+	 	     Terapia intensiva:	Integer		TIPOLOGIA DATO
+	 	     Ospedalizzati:		Integer		TIPOLOGIA DATO
+	 	     Totale_positivi:	Integer		TIPOLOGIA DATO
+	 	     Deceduti:		    Integer		TIPOLOGIA DATO
+	 	     Totale_casi:		Integer		TIPOLOGIA DATO
+
+	* METADATI DESCRITTIVI:
+
+		*Attualmente positivi   *Guariti  *Morti   *Casi totali ---> dati descrittivi dashboard con collegamento sottostante di download dati .CSV
+
+}
+
+
+{ FONTE 3
+
+	LINK: https://www.kaggle.com/
+
+
+	Download link: https://www.kaggle.com/datasets/josephassaker/covid19-global-dataset?select=worldometer_coronavirus_daily_data.csv
+
+
+	* CLASSIFICAZIONE: ✪✪✪✪ 4 stelle - dotazione URI
+
+	* DATI COVID 2022 - italia (dati manipolati per estrazione di dati significativi)
+
+	* CAMPI: Date:		        Date	    TIPOLOGIA DATO
+	 	     Country:		    String		TIPOLOGIA DATO
+	 	     Total_cases:		Integer		TIPOLOGIA DATO
+	 	     Total_deaths:		Integer		TIPOLOGIA DATO
+	 	     Daily_new_deaths:	Integer		TIPOLOGIA DATO
+	 
+
+	* METADATI DESCRITTIVI:
+
+		COLLABORATORS:		Joseph Assaker (Owner)
+
+		AUTHORS:		-------
+
+
+		COVERAGE: 
+	
+			TEMPORAL COVERAGE START DATE
+				01/21/2020
+
+			TEMPORAL COVERAGE END DATE
+				02/06/2021
+
+	   		GEOSPATIAL COVERAGE
+				------
+
+		DOI CITATION:
+		
+			DOI (DIGITAL OBJECT IDENTIFIER)
+				------
+
+		PROVENANCE:
+		
+			    SOURCES
+	    	worldometers.info
+
+		COLLECTION METHODOLOGY:
+
+			Using Python, we scraping techniques were used to collect the data for all 218 countries from worldometers.info.
+
+		LICENSE:
+	
+			CC0: Public Domain
+
+		EXPENDED UPDATES FREQUENCY
+		
+			Daily (Updated a year ago)
+
+
+}
+
+
+{ FONTE 4
+
+	LINK: https://ourworldindata.org/covid-cases
+
+
+	* CLASSIFICAZIONE: ✪✪✪ 3 stelle		FILE .CSV
+
+	* DATI COVID 2022-2023 - italia (dati manipolati per estrazione di dati significativi)
+
+	* CAMPI: Continent:	        String	    TIPOLOGIA DATO
+	 	     Location:		    String		TIPOLOGIA DATO
+	 	     Date:			    Date		TIPOLOGIA DATO
+	 	     Total_cases:		Integer		TIPOLOGIA DATO
+	 	     Total_deaths:		Integer		TIPOLOGIA DATO
+	 
+
+	* METADATA:
+
+	 	-----------------------------------------------------
+
+
+}
+
+
+
+									PARTE 2
+
+
+{	PRIMARY KEY ----> in tutti e 4 i casi può essere utilizzato l'argomento DATE
+
+
+
+	DATA ENGINEER:  interviene nella fase inziale,si occupa della progettazione, sviluppo e gestione dei sistemi e delle infrastrutture necessarie per la raccolta, 
+					l'archiviazione, l'elaborazione.
+	
+	DATA ANALYST:  interviene successivamente terminata la fase iniziale, si occupa di analizzare i dati per estrarre informazioni significative 
+		       	   e supportare la presa di decisioni aziendali basate sui dati. 
+		           Il loro ruolo principale è quello di tradurre i dati grezzi in dati utili che possono essere utilizzati ed 
+		           identificare le tendenze e rispondere a domande di business specifiche.
+	
+	DATA SCIENTIST:  fase finale,è un professionista che applica metodi scientifici, 
+			         algoritmi statistici e tecniche di machine learning per estrarre informazioni significative dai dati. 
+
+	DATA JOURNALIST:  Il ruolo di un Data Journalist è quello di esplorare, analizzare e interpretare i dati per creare narrazioni informative e coinvolgenti.
+
+
+
+
+
+	METADATI DI TIPO DESCRITTIVO IN TUTTE LE FONTI
+		       
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
