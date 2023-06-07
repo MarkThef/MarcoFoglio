@@ -16,9 +16,9 @@
 
 	* CAMPI: Date_reported:		Date		TIPOLOGIA DATO
 	 	     Country_code:		String		TIPOLOGIA DATO
-	 	     Country:		    String		TIPOLOGIA DATO
+	 	     Country:			String		TIPOLOGIA DATO
 	 	     WHO_region:		String		TIPOLOGIA DATO
-	 	     New_cases:		    Integer		TIPOLOGIA DATO
+	 	     New_cases:			Integer		TIPOLOGIA DATO
 	 	     Cumulative_cases:	Integer		TIPOLOGIA DATO
 	 	     New_deaths:		Integer		TIPOLOGIA DATO
 	 	     Cumulative_deaths:	Integer		TIPOLOGIA DATO
