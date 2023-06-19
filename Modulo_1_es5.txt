@@ -1,0 +1,225 @@
+Esercizio
+BIBLIOTECA LETTURAOK
+PARTE 1
+
+La biblioteca LETTURAOK chiede di sviluppare un sistema in grado di gestire le problematiche interne:
+
+come organizzereste la fase di analisi e raccolta requisiti?  (interviste?, questionari? Focus Group? Idee vostre?) 
+
+Su un documento testo, descrivere il lavoro in maniera dettagliata (domande/risposte dei questionari, domande delle interviste individuali o di gruppo, analisi della concorrenza, …).
+
+ 
+
+PARTE 2
+
+Tra le informazioni raccolte tramite l’analisi dei requisiti avete: nella biblioteca lavorano 10 dipendenti che lavorano su turni e un direttore. 
+All’interno ci sono 3 terminali per rispondere alle esigenze dei clienti (utilizzati dai dipendenti). La biblioteca è divisa su due piani e i volumi sono 
+all’interno di scaffali.
+Di ogni libro esiste una sola copia. I libri possono essere consultati all’interno o all’esterno della biblioteca. 
+Ad ogni cliente viene rilasciata una tessera associativa che riporta i dati del cliente e il codice cliente. 
+Un cliente può prendere in prestito un solo libro alla volta.
+
+esigenze dei clienti:
+
+1-Avete il libro…..  ?
+2-Quanto tempo lo posso tenere il libro….?
+3-Chi è l’autore di questo titolo….?
+4-Quali libri avete di questo autore….?
+5-Vorrei un libro di genere GIALLO che abbia meno di tot pagine …..?
+6-In quale posizione si trova il libro…..
+
+esigenze dei dipendenti/direttore:
+
+1-Registrare il nome del commesso che ha gestito transizione
+2-Sapere le informazioni anagrafiche di un commesso
+3-In quale posizione si trova il libro…..
+4-Codice del cliente che ha il libro
+
+
+
+
+PARTE 1 - Analisi e raccolta requisiti:
+
+Per organizzare la fase di analisi e raccolta dei requisiti per il sistema di gestione della biblioteca LETTURAOK,
+suggerirei di utilizzare un approccio combinato che comprenda diverse metodologie, 
+tra cui interviste, questionari e sessioni di focus group. Ecco come potrebbe essere strutturato il lavoro:
+
+1-Interviste individuali: 
+		
+			Si potrebbero condurre interviste individuali con il direttore della biblioteca e con alcuni dipendenti chiave per comprendere meglio 
+			le loro esigenze e aspettative riguardo al sistema di gestione. Durante le interviste, 
+			si potrebbero porre domande come:
+
+						- Quali sono le principali sfide che attualmente incontrate nella gestione delle attività della biblioteca?
+
+						- Quali funzionalità desiderate vedere nel nuovo sistema di gestione?
+
+						- Quali processi o attività possono essere migliorati o automatizzati?
+
+						- Quali sono le priorità in termini di requisiti e funzionalità?
+
+
+2-Questionari: 
+			
+			Si potrebbero creare questionari per raccogliere informazioni da un ampio spettro di dipendenti della biblioteca. 
+			I questionari potrebbero includere domande come:
+
+						- Come valutate l'efficienza dei processi attuali di prestito e restituzione dei libri?
+
+						- Cosa pensate possa essere migliorato nel sistema attuale?
+
+						- Quali funzionalità o servizi aggiuntivi vorreste vedere implementati nel nuovo sistema di gestione?
+
+3-Focus Group: 
+
+			Si potrebbe organizzare un focus group con una selezione rappresentativa di dipendenti per favorire la discussione e il 
+			confronto sulle esigenze e le priorità. Durante il focus group, si potrebbero affrontare argomenti come:
+
+						- Quali sono le principali sfide quotidiane che affrontate nella gestione della biblioteca?
+
+						- Come pensate che il nuovo sistema di gestione possa migliorare il vostro lavoro?
+
+						- Cosa vorreste vedere implementato nel nuovo sistema per semplificare le vostre attività?
+
+4-Analisi della concorrenza: 
+
+			Si potrebbe effettuare un'analisi delle biblioteche simili o dei sistemi di gestione utilizzati da altre istituzioni simili per 
+			identificare funzionalità che potrebbero essere adottate o adattate per la biblioteca LETTURAOK.
+
+
+
+
+-INFORMAZIONI RACCOLTE TRAMITE ANALISI DEI REQUISITI DELLA BIBBLIOTECA:
+
+							DIRETTORE: 1
+							DIPENDENTI: 10
+							TERMINALI: 3
+
+
+
+
+									GLOSSARIO
+
+
+
+- CLIENTI: utilizzatore del servizio letturaok. Esterno all’azienda e interagisce con un dipendente dell’azienda. 
+	   Ha un account e una tessera associativa con un codice identificativo. 
+	   Associato ad ogni cliente ci sono i suoi dati personali (anagrafica e storico delle prestiti).
+
+- DIRETTORE: primo responsabile dell'azienda. Interno all'azienda e interagisce con i dipendenti. Si occupa della gestione di tutti i 
+	     processi lavorativi e del personale, cercando di rendere il lavoro a tutti i dipendenti più fluido,preciso e ordinato.
+
+- DIPENDENTI: personale selezionato dal direttore per l'operatività dei processi principali dell'azienda, interazione con cliente, 
+	      gestione sistema di registrazione utenti, gestione processi logistici azienda.
+
+- LIBRO: oggetto fisico all’interno della biblioteca che può essere dato in prestito al cliente e che occupa una posizione sulla base di piani e 
+	 scaffali all’interno dei locali della biblioteca, Di ogni libro esiste una sola copia. 
+	 I libri possono essere consultati all’interno o all’esterno della biblioteca e un cliente può prendere in prestito un solo libro alla volta.
+              
+
+
+
+	
+
+
+È importante documentare in modo dettagliato le domande e le risposte dei questionari, le domande delle interviste individuali o di gruppo e i risultati 
+dell'analisi della concorrenza in un documento testo. Questo documento servirà come punto di partenza per la progettazione e lo sviluppo 
+del sistema di gestione della biblioteca.
+
+
+
+
+
+
+PARTE 2 - Esigenze dei clienti e dei dipendenti/direttore:
+
+			Basandoci sulle informazioni raccolte tramite l'analisi dei requisiti, ecco un elenco delle esigenze dei clienti e dei dipendenti/direttore:
+
+
+
+Esigenze dei clienti:
+
+		"Avete il libro...?"
+			I clienti desiderano verificare la disponibilità di un determinato libro nella biblioteca.
+
+
+		"Quanto tempo posso tenere il libro...?"
+			I clienti vogliono conoscere la durata consentita per il prestito di un libro.
+
+
+		"Chi è l'autore di questo titolo...?"
+			I clienti desiderano ottenere informazioni sull'autore di un libro specifico.
+
+
+		"Quali libri avete di questo autore...?"
+			I clienti vogliono sapere quali altri libri sono disponibili scritti da uno specifico autore.
+
+
+		"Vorrei un libro di genere GIALLO..."
+			I clienti cercano un libro di un determinato genere.
+
+
+		"In quale posizione si trova il libro...?"
+			I clienti desiderano sapere l'ubicazione fisica di un libro nella biblioteca.
+
+
+Esigenze dei dipendenti/direttore:
+
+		"Registrare il nome del dipendente che ha gestito la transazione."
+			I dipendenti devono essere in grado di registrare il nome del collega che ha gestito una specifica transazione di prestito o 
+			restituzione di un libro.
+
+
+		"Sapere le informazioni anagrafiche di un dipendente."
+			I dipendenti vogliono accedere alle informazioni personali e di contatto di un collega per motivi di comunicazione o amministrazione interna.
+
+
+		"In quale posizione si trova il libro...?"
+			I dipendenti devono essere in grado di individuare la posizione fisica di un libro all'interno della biblioteca per assistere i clienti.
+
+
+		"Codice del cliente che ha il libro."
+			I dipendenti e il direttore devono avere accesso al codice del cliente associato a un libro specifico per gestire 
+			correttamente i prestiti e le restituzioni.
+
+
+
+Queste esigenze identificate saranno utili nella progettazione e nello sviluppo del sistema di gestione della biblioteca LETTURAOK, 
+consentendo di creare funzionalità e flussi di lavoro che soddisfino le necessità sia dei clienti che dei dipendenti.
+
+
+							
+
+							
+							ESEMPIO DI SISTEMA DI GESTIONE DELLA BIBBLIOTECA
+
+
+
+DIRETTORE E DIPENDENTI: Si potrebbe implementare un software interno aziandale per la gestione logistica dei processi lavorativi.
+   			
+
+
+FUNZIONALITA' SOFTWARE: 
+
+		REGISTRAZIONE UTENTE: N° documento identità, codice fiscale, nome, cognome, data di nascita, luogo di nascita, nazionalità, luogo di resisdenza,
+				      N° telefono, Email	
+				      EFFETTUATA LA REGISTRAZIONE AVVIENE IL RILASCIO DELLA TESSERA ASSOCIATIVA
+
+		CONSULTAZIONE DA PARTE DEI DIPENDENTI: i dipendenti con il software aziendale hanno la apossibilità di accedere e consultare i database aziendali,
+						       DATABASE---> clienti       DATABASE---> libri    DATABASE---> fornitori     
+						       possibilità con software di richiamare CLIENTE/LIBRO per vedere storico cliente e quali libri in loro possesso
+						       e da quanto tempo, occupandosi di tutto il processo logistico.
+
+		DIRETTORE: il direttore potrebbe utilizzare il sistema aziendale per il controllo e la gestione dell'azienda,
+			   DATABASE---> clienti        DATABASE---> libri      DATABASE---> dipendenti     DATABASE---> fornitori
+			   facendo un esempio dei processi effettuati dal direttore: richiamo tramite il software di uno specifico dipendente per consultare
+			   i processi logistici da lui effettuati negli ultimi 6 mesi.
+
+
+
+CLIENTI: accessso a sito internet di consultazione (con tessera associativa) dei titoli dei libri presenti nella bibblioteca e posizione sullo scaffale, 
+		  con possibilità di prenotazione e data di ritiro.
+
+		ACCESSO AL SITO: creazione account---> email,password e N° tessera associativa
+						       
+ 
