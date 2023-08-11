@@ -1,0 +1,36 @@
+CREATE DATABASE Ryanair;
+
+use Ryanair;
+
+CREATE TABLE Aeroporto  (
+    città varchar(255),
+    nazione varchar(255),
+    num_piste int unsigned,
+    primary key (città)
+    
+);
+
+
+CREATE TABLE Aereo (
+    tipo_aereo varchar(255),
+    num_passeggeri int unsigned,
+    qta_merci int unsigned,
+    primary key (tipo_aereo)
+
+);
+
+
+CREATE TABLE Volo (
+    id_volo varchar(255),
+    giorno_sett enum("Lunedi","Martedi","Mercoledi","Giovaedi","Venerdi","Sabato","Domenica"),
+    città_part varchar(255),
+    ora_part time,
+    città_arr varchar(255),
+    ora_arr time,
+    tipo_aereo varchar(255),
+    primary key (id_volo)
+    constraint FK_Aereo_volo foreign key (tipo_aereo) references Aereo (tipo_aereo) on update cascade on delete no action,
+    constraint FK_Città_part_Aeroporto_volo foreign key (città_part) references Aeroporto (città) on update cascade on delete no action,
+    constraint FK_Città_Arrivo_Aeroporto_volo foreign key (città_arr) references Aeroporto (città) on update cascade on delete no action,
+);
+

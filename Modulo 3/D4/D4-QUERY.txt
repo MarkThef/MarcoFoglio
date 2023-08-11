@@ -1,0 +1,9 @@
+select città from Aeroporto where num_piste is null;
+
+select tipo_aereo from Volo where città_part = 'Torino';
+
+select città_part from Volo where città_arr ='Bologna';
+
+select città_part,città_arr from Volo where id_volo = 'AZ274';
+
+select tipo_aereo,giorno_sett,ora_part from Volo where città_part LIKE "B%O%" AND città_arr LIKE "%e%a";

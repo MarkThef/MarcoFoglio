@@ -1,5 +1,7 @@
 CREATE DATABASE gheimstop;
 
+USE gheimstop;
+
 CREATE TABLE impiegato (
     codice_fiscale varchar(255) not null,
     nome varchar(255) not null,
@@ -27,8 +29,8 @@ CREATE TABLE collaborazione (
     codice_fiscale varchar(255),
     id_store int,
     carica varchar(255),
-    foreign key (codice_fiscale) references impiegato(codice_fiscale),
-    foreign key (id_store) references store(id_store),
+    foreign key (codice_fiscale) references impiegato(codice_fiscale) on update cascade on delete no action,
+    foreign key (id_store) references store(id_store) on update cascade on delete no action,
     primary key (badge_impiegato, data_inizio, data_fine)
     
 );
@@ -52,9 +54,9 @@ CREATE TABLE settore (
     nome_sviluppatore varchar(255),
     numero_copie int,
     primary key (id),
-    foreign key (id_store) references store(id_store),
-    foreign key (titolo) references videogioco(titolo),
-    foreign key (nome_sviluppatore) references videogioco(nome_sviluppatore)
+    foreign key (id_store) references store(id_store) on update cascade on delete no action,
+    foreign key (titolo) references videogioco(titolo) on update cascade on delete no action,
+    foreign key (nome_sviluppatore) references videogioco(nome_sviluppatore) on update cascade on delete no action
     
 );
 
