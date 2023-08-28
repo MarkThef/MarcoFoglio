@@ -1,0 +1,50 @@
+
+			ESERCIZIO 1
+
+
+
+SELECT autore.nome,
+       cantante.nome_cantante,
+       esecuzione.titolo_canz,
+       esecuzione.codice_reg
+FROM esecuzione
+INNER JOIN autore ON autore.titolo_canz = esecuzione.titolo_canz
+INNER JOIN cantante ON cantante.codice_reg = esecuzione.codice_reg
+WHERE autore.nome LIKE 'D%' AND autore.nome = cantante.nome_cantante; 
+
+
+
+SELECT disco.titolo_album,
+       esecuzione.tiolo_canzone,
+       esecuzione.anno
+FROM disco
+JOIN esecuzione on disco.anno = esecuzione.anno
+WHERE esecuzione.anno IS NULL
+
+
+
+SELECT autore.nome,
+       autore.titolo_canz,
+       cantante.nome_cantante
+FROM autore
+JOIN cantante on autore.nome = cantante.nome_cantante
+
+
+
+			ESERCIZIO 2
+
+
+
+SELECT s.MatricolaStudente, s.NomeStudente, e.CodiceCorso, d.NomeDocente
+FROM STUDENTE s
+JOIN ESAME e ON s.MatricolaStudente = e.MatricolaStudente
+JOIN CORSO c ON e.CodiceCorso = c.CodiceCorso
+JOIN DOCENTE d ON c.MatricolaDocente = d.MatricolaDocente
+WHERE e.Voto > 28;
+
+
+
+SELECT DISTINCT d.NomeDocente, c.Nome AS NomeCorso, e.SettoreScientifico
+FROM DOCENTE d
+JOIN CORSO c ON d.MatricolaDocente = c.MatricolaDocente
+JOIN ESAME e ON e.CodiceCorso=c.CodiceCorso;
