@@ -3,23 +3,19 @@
 
 
 
-SELECT autore.nome,
-       cantante.nome_cantante,
-       esecuzione.titolo_canz,
-       esecuzione.codice_reg
-FROM esecuzione
-INNER JOIN autore ON autore.titolo_canz = esecuzione.titolo_canz
-INNER JOIN cantante ON cantante.codice_reg = esecuzione.codice_reg
-WHERE autore.nome LIKE 'D%' AND autore.nome = cantante.nome_cantante; 
+SELECT autore.NomeAutore, 
+       cantante.NomeCantante, 
+       esecuzione.TitoloCanzone
+FROM autore
+INNER JOIN esecuzione ON esecuzione.TitoloCanzone = autore.TitoloCanzone
+INNER JOIN cantante ON cantante.CodiceReg = esecuzione.CodiceReg
+WHERE autore.NomeAutore=cantante.NomeCantante AND autore.NomeAutore LIKE 'D%';
 
 
-
-SELECT disco.titolo_album,
-       esecuzione.tiolo_canzone,
-       esecuzione.anno
-FROM disco
-JOIN esecuzione on disco.anno = esecuzione.anno
-WHERE esecuzione.anno IS NULL
+SELECT DISTINCT d.TitoloAlbum, d.AnnoDisco
+FROM DISCO d
+LEFT JOIN ESECUZIONE e ON d.TitoloAlbum = e.TitoloCanzone
+WHERE e.AnnoEsecuzione IS NULL;
 
 
 
