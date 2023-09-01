@@ -1,0 +1,140 @@
+CREATE DATABASE tanniko;
+
+USE tanniko;
+
+CREATE TABLE fornitore(
+      id_fornitore varchar(255) not null,
+      nome varchar(255) not null,
+      città varchar(255) not null,
+      indirizzo varchar(255) not null,
+	  telefono varchar(255) not null,
+      indirizzo_email varchar(255) not null,
+      primary key(id_fornitore)
+);
+
+CREATE TABLE cantina(
+      id_cantina varchar(255) not null,
+      nome varchar(255) not null,
+      città varchar(255) not null,
+      indirizzo varchar(255) not null,
+      id_fornitore varchar(255) not null,
+      primary key(id_cantina),
+      foreign key(id_fornitore) references fornitore(id_fornitore) on update cascade on delete no action
+);
+
+CREATE TABLE vino(
+      id_fornitore varchar(255) not null,
+      id_vino varchar(255) not null,
+      id_cantina varchar(255) not null,
+      nome_vino varchar(255) not null,
+      tipologia varchar(255) not null,
+      uve varchar(255) not null,
+      formato float not null,
+      prezzo decimal(10,2) not null,
+      primary key(id_vino),
+      foreign key(id_cantina) references cantina(id_cantina) on update cascade on delete no action,
+      foreign key(id_fornitore) references fornitore(id_fornitore) on update cascade on delete no action
+);
+
+CREATE TABLE cliente(
+      id_cliente int auto_increment not null,
+      nome varchar(255) not null,
+      città varchar(255) not null,
+      indirizzo varchar(255) not null,
+	  telefono varchar(255) not null,
+      indirizzo_email varchar(255) not null,
+      primary key(id_cliente)
+);
+
+CREATE TABLE ordine_fornitore(
+      id_ordine varchar(255) not null,
+      DataOra_ordine datetime not null,
+      id_fornitore varchar(255) not null,
+      id_articolo varchar(255) not null,
+      quantità int not null,
+      primary key(id_ordine),
+      foreign key(id_fornitore) references fornitore(id_fornitore) on update cascade on delete no action
+);
+
+CREATE TABLE ordine_cliente(
+      id_ordine varchar(255) not null,
+      DataOra_ordine datetime not null,
+      id_cliente int not null,
+      id_articolo varchar(255) not null,
+      quantità int not null,
+      primary key(id_ordine,id_articolo),
+      foreign key(id_cliente) references cliente(id_cliente) on update cascade on delete no action,
+      foreign key(id_articolo) references vino(id_vino) on update cascade on delete no action
+);
+
+INSERT INTO fornitore(id_fornitore,nome,città,indirizzo,telefono,indirizzo_email) 
+VALUES ('K-10','Antinori SRL', 'Siena (SI)', 'Via Roma 75', '3457890123', 'francoantinori@antinori.it'),
+       ('K-11','Santus SRL', 'Iseo (BS)', 'Cascina Santi 12', '3456767892', 'santus@santus.it'),
+       ('K-12','Terenzi Cantine SRL', 'Scansano (GR)', 'Via Roma 2', '3457890883', 'alessandroterenzi@terenzicantine.it'),
+       ('K-13','Az. Vitivinicola Travaglini', 'Gattinara (VC)', 'Via Borgo 35B', '3335657589', 'giovannitravaglini@travaglini.it'),
+       ('K-14','Az.Agr. Weingut Haderburg', 'Salorno (BZ)', 'Via Albrecht Durer 3', '3488888987', 'had-haussmannoff@haderburg.it'),
+       ('K-15','Kellerei Bozen', 'Bolzano (BZ)', 'Via San Maurizio 36', '3457444123', 'giovannisanti@kellereibozen.it'),
+       ('K-16','Carli Vino&Disttillato Distribuzione', 'Genova (GE)', 'Via Taddei 85', '3330090123', 'enricocarli@carli.it'),
+       ('K-17','Gianfranco Fino SRL', 'Manduria (TA)', 'Via del vino 1', '4556723173', 'alessandrafino@fino.it');
+
+INSERT INTO cantina(id_cantina,nome,città,indirizzo,id_fornitore) 
+VALUES ('A1','Antinori in chianti classico', 'Siena (SI)', 'Via Roma 75', 'K-10'),
+	   ('A2','Antinori Castello della sala', 'Montefalco (PG)', 'Via Carli 7', 'K-10'),
+       ('A3','Santus', 'Iseo (BS)', 'Cascina Santi 12', 'K-11'),
+       ('A4','Terenzi', 'Scansano (GR)', 'Via Roma 2', 'K-12'),
+       ('A5','Travaglini', 'Gattinara (VC)', 'Via Borgo 35B', 'K-13'),
+       ('A6','Haderburg', 'Salorno (BZ)', 'Via Albrecht Durer 3', 'K-14'),
+       ('A7','Kellerei Bozen', 'Bolzano (BZ)', 'Via San Maurizio 36', 'K-15'),
+	   ('A8','Michel Gonet', 'Avize (FRANCIA)', '196 Av. Jean Jaures, 51190', 'K-16'),
+       ('A9','Laherte freres', 'Chavot (FRANCIA)', '3 Rue des Jardins, 51530', 'K-16'),
+       ('A10','Charles Heidsieck', 'Reims (FRANCIA)', '12 Allee du Vignoble, 51100', 'K-16'),
+       ('A11','DonnaFugata', 'Marsala (TP)', 'Via Sebastiano Lipari 18', 'K-16'),
+       ('A12','Gianfranco Fino', 'Manduria (TA)', 'Via del vino 1', 'K-17');
+       
+INSERT INTO vino(id_fornitore,id_vino,id_cantina,nome_vino,tipologia,uve,formato,prezzo) 
+VALUES ('K-10','D120','A1','Chianti classico riserva 2015','Rosso', 'Sangiovese', 0.750, 45.00),
+       ('K-10','D121','A1','Chianti classico riserva 2012','Rosso','Sangiovese', 0.750, 65.35),
+       ('K-10','D122','A1','Chianti classico 2018','Rosso','Sangiovese', 0.750, 23.50),
+       ('K-11','D150','A3','Essenza riserva 2012','Spumante','Chardonnay', 0.750, 35.00),
+       ('K-11','D151','A3','Franciacorta Dosaggio Zero 2016','Spumante','Chardonnay,Pinot Nero', 0.750, 23.00),
+       ('K-11','D152','A3','Franciacorta Brut 2016','Spumante','Chardonnay,Pinot Nero', 0.750, 18.00),
+       ('K-10','D170','A2','Cervaro della sala','Bianco','Chardonnay', 0.750, 53.00),
+       ('K-10','D171','A2','Muffato della sala','Passito','Chardonnay', 0.750, 67.00),
+       ('K-13','D220','A5','Gattinara 2015','Rosso','Nebbiolo', 0.750, 24.00),
+       ('K-13','D221','A5','Gattinara riserva 2015','Rosso','Nebbiolo', 0.750, 45.00),
+       ('K-14','D800','A6','Haderburg Brut 2015','Spumante','Chardonnay,Pinot Nero', 0.750, 23.50),
+       ('K-14','D801','A6','Haderburg Hausmannoff riserva 2011','Spumante','Chardonnay', 0.750, 43.00),
+       ('K-14','D802','A6','Haderburg Hausmannoff Pinot Noir 2018','Rosso','Pinot Nero', 0.750, 18.00),
+       ('K-16','D300','A8','Michel Gonet Gran Cru Blanc de Blancs','Spumante','Chardonnay', 0.750, 52.00),
+       ('K-16','D400','A9','Laherte Freres Ultradition Extra-Brut','Spumante','Chardonnay,Pinot Nero,Pinot Meunier', 0.750, 47.00),
+       ('K-17','D45','A12','Primitivo Manduria riserva 2018','Rosso','Primitivo', 0.750, 51.00),
+       ('K-16','D700','A11','Etna Rosso riserva 2015','Rosso','Nerello Mascalese', 0.750, 42.00);
+      
+       
+INSERT INTO cliente(nome,città,indirizzo,telefono,indirizzo_email) 
+VALUES ('Giovanni Carli', 'Milano(MI)', 'Via Roma 44', '3456671234', 'gio.carli@hotmail.it'),
+	   ('Giovanni Ruggeri', 'Milano(MI)', "Piazza D'uomo 134", '3456671777', 'gio.ruggeri@hotmail.it'),
+       ('Silvia Buoso', 'Pandino(CR)', 'Via Deledda 55', '3458991234', 'silviabuo@hotmail.it'),
+       ('Enrico Carli', 'Milano(MI)', 'Via Roma 45', '3458171234', 'carli@hotmail.it'),
+       ('Elisa Mariconti', 'Brescia(BS)', 'Via Milano 32', '3213171234', 'elisa4455@outlook.it'),
+       ('Domenico Vona', 'Iseo(BS)', 'Via Grandi 5', '3453332134', 'd.vona@gmail.it'),
+       ('Giovanna Labo', 'Castrezzato(BS)', 'Via del borgo 144', '3455543234', 'gio.labo@gmail.it');
+
+     
+INSERT INTO ordine_fornitore(id_ordine,DataOra_ordine,id_fornitore,id_articolo,quantità) 
+VALUES ('ORD123F', '2021-08-15 15:30:00', 'K-10', 'D120', 10),
+	   ('ORD124F', '2021-09-10 11:30:00', 'K-10', 'D121', 12),
+       ('ORD125F', '2021-10-15 10:30:00', 'K-11', 'D151', 8),
+       ('ORD126F', '2022-03-07 09:30:00', 'K-16', 'D400', 12),
+       ('ORD127F', '2022-04-09 18:30:00', 'K-16','D300', 6),
+       ('ORD128F', '2022-06-22 17:30:00', 'K-17', 'D45', 10);
+       
+INSERT INTO ordine_cliente(id_ordine,DataOra_ordine,id_cliente,id_articolo,quantità) 
+VALUES ('ORD223C', '2021-07-10 14:30:00', 6, 'D150', '6'),
+       ('ORD223C', '2021-07-10 14:30:00', 1, 'D170', '3'),
+       ('ORD224C', '2021-09-09 14:30:00', 4, 'D152', '2'),
+       ('ORD225C', '2021-12-23 18:30:00', 1, 'D300', '1'),
+       ('ORD225C', '2021-12-23 18:30:00', 6, 'D400', '6'),
+       ('ORD225C', '2021-12-23 18:30:00', 7, 'D700', '4'),
+       ('ORD226C', '2022-07-24 17:30:00', 7, 'D122', '2'),
+       ('ORD227C', '2022-10-01 20:30:00', 5, 'D45', '1');

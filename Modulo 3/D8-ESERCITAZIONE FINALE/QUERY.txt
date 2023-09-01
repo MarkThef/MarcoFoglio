@@ -1,0 +1,117 @@
+				QUERY
+
+
+1-
+
+SELECT nome,indirizzo,città
+FROM cantina
+WHERE città LIKE '%(FRANCIA)'
+ORDER BY nome;
+
+
+2-
+
+SELECT nome,indirizzo,città
+FROM cantina
+WHERE indirizzo LIKE '%J%'
+ORDER BY nome;
+
+3-
+
+SELECT id_cliente,
+       nome,
+       città,
+       indirizzo_email
+FROM cliente
+WHERE città='Milano(MI)' AND nome LIKE '%i'
+ORDER BY nome ASC;
+
+
+4-
+
+SELECT ordine_cliente.id_ordine,
+       ordine_cliente.DataOra_ordine,
+       cliente.id_cliente,
+       cliente.nome,
+       vino.id_vino,
+       vino.nome_vino,
+       vino.prezzo,
+       ordine_cliente.quantità
+FROM cliente
+INNER JOIN ordine_cliente ON ordine_cliente.id_cliente=cliente.id_cliente
+INNER JOIN vino ON vino.id_vino=ordine_cliente.id_articolo
+WHERE ordine_cliente.quantità > 2;
+
+
+
+5-
+
+SELECT 
+    ordine_cliente.id_ordine,
+    ordine_cliente.DataOra_ordine,
+    SUM(vino.prezzo * ordine_cliente.quantità) AS TOT_Vendita
+FROM ordine_cliente
+INNER JOIN vino ON vino.id_vino=ordine_cliente.id_articolo
+GROUP BY
+    ordine_cliente.id_ordine,
+    ordine_cliente.DataOra_ordine
+HAVING TOT_Vendita > 47.00;
+
+
+6-
+
+
+SELECT ordine_cliente.id_ordine,
+       ordine_cliente.DataOra_ordine,
+       COUNT(ordine_cliente.id_ordine) AS N°_Tipologie_Articoli
+FROM cliente
+INNER JOIN ordine_cliente ON ordine_cliente.id_cliente=cliente.id_cliente
+GROUP BY ordine_cliente.id_ordine,
+         ordine_cliente.DataOra_ordine;
+
+
+7-
+
+SELECT fornitore.id_fornitore,
+       vino.nome_vino,
+       vino.tipologia,
+       vino.uve,
+       vino.formato
+FROM fornitore
+INNER JOIN vino ON vino.id_fornitore=fornitore.id_fornitore
+GROUP BY fornitore.id_fornitore,
+         vino.nome_vino,
+         vino.tipologia,
+         vino.uve,
+         vino.formato
+HAVING vino.uve = 'Chardonnay'
+ORDER BY vino.nome_vino DESC;
+
+
+8-
+
+SELECT id_ordine,
+       id_fornitore, 
+       id_articolo, 
+       quantità
+FROM ordine_fornitore
+WHERE MONTH(DataOra_ordine) = 6;
+
+9-
+
+SELECT YEAR(DataOra_ordine) AS 'Anno'
+FROM ordine_cliente
+GROUP BY YEAR(DataOra_ordine)
+HAVING COUNT(*) > 3;
+
+10-
+
+SELECT vino.*, cantina.nome AS nome_cantina
+FROM cantina
+LEFT JOIN vino ON vino.id_fornitore = cantina.id_fornitore
+
+UNION
+
+SELECT vino.*, cantina.nome AS nome_cantina
+FROM cantina
+RIGHT JOIN vino ON vino.id_fornitore = cantina.id_fornitore;

@@ -1,0 +1,9 @@
+				E-COMMERCE DI VINO (TANNIKO)
+
+
+Il progetto di questa base di dati si incentra sulla gestione interna aziendale
+degli ordini-clienti e la gestione degli ordini-fornitori effettuati 
+dall'ufficio commerciale.
+il database è molto semplice: è costituito da 4 ENTITA' principali(fornitore,cantina,vino,cliente),
+e 2 ENTITA' secondarie(ordine_fornitore,ordine_cliente) per la gestione degli ordini,dove possono essere eseguite più
+aggregazioni tra le tabelle per varie consultazioni di vendita/acquisto.
