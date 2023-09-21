@@ -464,7 +464,7 @@ print(risultato)
 
 # Esaminiamo il dataset:
 # quanti dati ci sono in totale?    --22.473 ----> 2497 righe , 9 colonne--
-# quali sono i metadati?            --L'unico metadato che abbiamo è solo il nome del file .xlsx--
+# quali sono i metadati?            
 # stampiamo il primo elemento
 # stampiamo l'ultimo elemento
 # riusciamo a stampare un elemento a caso?
@@ -479,6 +479,8 @@ import pandas as pd
 df = pd.read_excel('C:\\Users\\markt\\Desktop\\NewProject\\Modulo 4\\mappa_pub.xlsx')
 
 print(df.count())   # quanti dati ci sono in totale?
+print(df.columns)   #  metadati
+print(df.index)     #  metadati
 print(df.head(1))   # stampiamo il primo elemento
 print(df.tail(1))   # stampiamo l'ultimo elemento
 print(df.iloc[125]) # riusciamo a stampare un elemento a caso?
