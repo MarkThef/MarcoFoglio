@@ -27,4 +27,7 @@ def confronto_vaccini_continenti():
         print('\n\nSTATISTICHE TOTALI VACCINI MONDO\n')
         print(statistica_vaccini)
 
+    else:
+        print('ERRORE! INSERIRE I DATI CORRETTI')
+
 confronto_vaccini_continenti()

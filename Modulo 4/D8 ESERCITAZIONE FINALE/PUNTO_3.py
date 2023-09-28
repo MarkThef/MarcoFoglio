@@ -1,47 +1,5 @@
 # punto 3
 
-# import pandas as pd
-
-# # Imposta le opzioni di formattazione per Pandas per visualizzare interi
-# pd.options.display.float_format = '{:,.0f}'.format
-
-
-# def confronto_statistiche_continenti():
-
-#     dataset = input('Inserisci il nome del dataset: ').lower()
-#     continente1 = input('Inserisci il nome del primo continente(INSERIRE IL DATO IN LINGUA INGLESE): ').capitalize()
-#     continente2 = input('Inserisci il nome del secondo continente(INSERIRE IL DATO IN LINGUA INGLESE): ').capitalize()
-
-#     if dataset == 'covid.csv':
-
-#         # Carica il dataset da un file CSV
-#         df = pd.read_csv('covid.csv')
-
-        
-#         # Filtra solo le righe per i continenti specificati
-#         continente_data1 = df[df['continent'] == continente1].copy()
-#         continente_data2 = df[df['continent'] == continente2].copy()
-        
-#          # Filtra solo la colonna 'total_cases'
-#         casi_totali1 = continente_data1['total_cases']
-#         casi_totali2 = continente_data2['total_cases']
-#         mondo_data = df['total_cases']
-
-#         # Calcola e stampa solo il valore minimo, massimo, media e percentuale per entrambi i continenti
-#         statistica1 = casi_totali1.describe().loc[['min', 'max', 'mean', '75%']]
-#         statistica2 = casi_totali2.describe().loc[['min', 'max', 'mean', '75%']]
-#         statistica_mondo = mondo_data.describe().loc[['min', 'max', 'mean', '75%']]
-
-
-#         print(f"\n\nSTATISTICHE PER {continente1}:\n\n{statistica1}\n")
-#         print(f"STATISTICHE PER {continente2}:\n\n{statistica2}\n")
-#         print(f"STATISTICHE MONDO:\n\n{statistica_mondo}\n")
-        
-#     else:
-#         print('ERRORE! INSERIRE I DATI CORRETTI')
-
-# confronto_statistiche_continenti()
-
 import pandas as pd
 
 # Imposta le opzioni di formattazione per Pandas per visualizzare interi
