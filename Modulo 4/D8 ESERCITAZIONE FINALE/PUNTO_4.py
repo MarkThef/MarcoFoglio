@@ -10,15 +10,15 @@ pd.options.display.float_format = '{:,.0f}'.format
 
 def confronto_vaccini_continenti():
 
-    dataset = input('Inserisci il nome del dataset: ').lower()  # total_vaccinations
+    dataset = input("Inserisci il nome del dataset (PER L'ESERCITAZIONE EPICODE INSERIRE IL FILE ==> covid.csv): ").lower()  
 
     if dataset == 'covid.csv':
 
         # Carica il dataset da un file CSV
         df = pd.read_csv('covid.csv')
 
-        # Filtra solo le righe per i continenti specificati
-        vaccinazioni_per_continente = df.groupby('continent')['total_vaccinations'].sum()
+        
+        vaccinazioni_per_continente = df.groupby('continent')['total_vaccinations'].max()
         vaccinazioni_per_continente = vaccinazioni_per_continente.copy()
         statistica_vaccini = vaccinazioni_per_continente.describe().loc[['min', 'max', 'mean', '75%']]
 

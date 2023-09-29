@@ -7,11 +7,14 @@ pd.options.display.float_format = '{:,.0f}'.format
 
 def confronto_statistiche_continenti():
 
-    dataset = input('Inserisci il nome del dataset: ').lower()
-    continente1 = input('Inserisci il nome del primo continente(INSERIRE IL DATO IN LINGUA INGLESE): ')
-    continente2 = input('Inserisci il nome del secondo continente(INSERIRE IL DATO IN LINGUA INGLESE): ')
+    continenti = ['Africa', 'Asia', 'Europe', 'North america', 'Oceania', 'South america']
 
-    if dataset == 'covid.csv':
+    dataset = input("\nInserisci il nome del dataset (PER L'ESERCITAZIONE EPICODE INSERIRE IL FILE ==> covid.csv): ").lower()
+    continente1 = input('\nInserisci il nome del primo continente (Africa <> Asia <> Europe <> North america <> Oceania <> South america): ').capitalize()
+    continente2 = input('\nInserisci il nome del secondo continente (Africa <> Asia <> Europe <> North america <> Oceania <> South america): ').capitalize()
+    
+
+    if dataset == 'covid.csv' and continente1 in continenti and continente2 in continenti:
 
         # Carica il dataset da un file CSV
         df = pd.read_csv('covid.csv')
@@ -24,16 +27,20 @@ def confronto_statistiche_continenti():
         casi_totali1 = continente_data1['total_cases']
         casi_totali2 = continente_data2['total_cases']
         mondo_data = df['total_cases']
+        massimi_casi_per_continente = df.groupby('continent')['total_cases'].max()
+        somma_massimi_casi = massimi_casi_per_continente.sum()
+
 
         # Calcola e stampa solo il valore minimo, massimo, media per entrambi i continenti
-        statistica1 = casi_totali1.describe().loc[['min', 'max', 'mean', '75%']]
-        statistica2 = casi_totali2.describe().loc[['min', 'max', 'mean', '75%']]
-        statistica_mondo = mondo_data.describe().loc[['min', 'max', 'mean', '75%']]
+        statistica1 = casi_totali1.describe()[['min', 'max', 'mean', '75%']]
+        statistica2 = casi_totali2.describe()[['min', 'max', 'mean', '75%']]
+        statistica_mondo = mondo_data.describe()[['min', 'max', 'mean', '75%']]
+
 
         # Calcola le somme dei casi per i continenti
-        somma_casi1 = casi_totali1.sum()
-        somma_casi2 = casi_totali2.sum()
-        somma_mondo = mondo_data.sum()
+        somma_casi1 = casi_totali1.max()
+        somma_casi2 = casi_totali2.max()
+        somma_mondo = somma_massimi_casi
 
         # Calcola le percentuali rispetto ai casi mondiali
         percentuale1 = (somma_casi1 / somma_mondo) * 100
@@ -45,10 +52,9 @@ def confronto_statistiche_continenti():
 
         print(f"Percentuale dei casi di {continente1} rispetto al mondo: {percentuale1:.2f}%")
         print(f"Percentuale dei casi di {continente2} rispetto al mondo: {percentuale2:.2f}%\n\n")
+        print(f"TOTALE CASI MONDO: {'{:,.0f}'.format(somma_mondo)}")
 
-        print(f"Totale casi di {continente1}: {somma_casi1:,.0f}")
-        print(f"Totale casi di {continente2}: {somma_casi2:,.0f}")
-        print(f"Totale casi nel mondo: {somma_mondo:,.0f}")
+
 
         
     else:
