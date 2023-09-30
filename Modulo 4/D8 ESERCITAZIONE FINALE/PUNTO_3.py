@@ -53,7 +53,7 @@ def confronto_statistiche_continenti():
     print(f"STATISTICHE PER {continente2}:\n\n{statistica2}\n")
     print(f"STATISTICHE MONDO:\n\n{statistica_mondo}\n")
 
-    # Stampa le statistiche
+    # Stampa percentuali
     print(f"\nPercentuale dei casi di {continente1} rispetto al mondo: {percentuale1:.2f}%")
     print(f"Percentuale dei casi di {continente2} rispetto al mondo: {percentuale2:.2f}%\n\n")
     print(f"TOTALE CASI MONDO: {'{:,.0f}'.format(somma_casi_mondo)}")
