@@ -1,0 +1,5 @@
+link Report Covid-19:  https://lookerstudio.google.com/s/lTsYQTM-jNw
+
+Ho dovuto pulire un pò il dataset per dati fuorvianti e confusionari.
+Ho convertito tutto il DataSet 'covid_19.xlsx' in un file .CSV dal nome 'looker_covid_19.csv' che troverete dentro questa cartella D3
+assieme al DataSet originale.
