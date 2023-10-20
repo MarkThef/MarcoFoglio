@@ -1,0 +1,7 @@
+link Report Vendite Libri:  https://lookerstudio.google.com/s/n56ZmsjBiwE
+
+ho allegato alla cartella tutti i file .csv scaricati e puliti e assemblati in un unico file .csv
+a sua volta dentro questa cartella dal nome FILE_UTILIZZATO_PER_REPORT.csv
+
+ho dovuto droppare molte colonne dei file delle regioni non significative per il report,perchè looker studio
+ha un limite di 100 MB di caricamento file.
