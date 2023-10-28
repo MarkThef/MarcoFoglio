@@ -1,0 +1,11 @@
+Link Esercitazione Finale -Report Autoricambi AUTO/MOTO-:   https://lookerstudio.google.com/s/r2dz3jcBT1Y
+
+allego qui sopra il Link del mio Report Autoricambi AUTO/MOTO, e nella stessa cartella 
+potete trovare il file excel Originale dal nome "DATI DA PULIRE + OBIETTIVI.xlsx" e anche 
+il file Excel dal nome "Dati_puliti.xlsx" a cui ho effettuato il processo di 'Data Cleaning'.
+
+se proprio dovrei fare un appunto, credo che il dato riguardante al fatturato sia un pò troppo basso 
+rispetto agli obbiettivi REGIONI/VENDITORI prefissati sugli anni 2020-2021-2023 dall'azienda.
+
+farei presente ovviamente questo aspetto del dato, all'ufficio commerciale prima di effettuare il Report.
+
