@@ -100,12 +100,12 @@ class CustomNavigationToolbar(NavigationToolbar):
         self.addAction(self._actions['save_figure'])
 
         # Personalizza le icone
-        self._actions['home'].setIcon(QIcon('immagini//reset.png'))
-        self._actions['back'].setIcon(QIcon('immagini//sinistra.png'))
-        self._actions['forward'].setIcon(QIcon('immagini//destra.png'))
-        self._actions['pan'].setIcon(QIcon('immagini//trascina.png'))
-        self._actions['zoom'].setIcon(QIcon('immagini//zoom.png'))
-        self._actions['save_figure'].setIcon(QIcon('immagini//fotografia.png'))
+        self._actions['home'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//reset.png'))
+        self._actions['back'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//sinistra.png'))
+        self._actions['forward'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//destra.png'))
+        self._actions['pan'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//trascina.png'))
+        self._actions['zoom'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//zoom.png'))
+        self._actions['save_figure'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//fotografia.png'))
 
     def set_message(self, s):
         pass
@@ -114,7 +114,7 @@ class MyMainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Grafico Temporale Fatturati")
-        self.setWindowIcon(QIcon("immagini//Plot.png"))
+        self.setWindowIcon(QIcon("App Grafico Temporale Fatturati//immagini//Plot.png"))
         self.init_ui()
         self.df = pd.DataFrame()
         self.filtered_df = pd.DataFrame()
@@ -160,7 +160,7 @@ class MyMainWindow(QMainWindow):
 
         # Left side - Download CSV button
         left_layout = QHBoxLayout()
-        self.download_button = CustomButton("Fatturati", "immagini//CSV.png")
+        self.download_button = CustomButton("Fatturati", "App Grafico Temporale Fatturati//immagini//CSV.png")
         self.download_button.clicked.connect(self.download_csv)
         left_layout.addWidget(self.download_button)
         left_layout.addStretch()  # This pushes the button to the left
@@ -168,16 +168,16 @@ class MyMainWindow(QMainWindow):
         # Right side - Year dropdown, Show all button, Load source button
         right_layout = QHBoxLayout()
         self.year_dropdown = CustomComboBox(self)
-        self.year_dropdown.addItem(QIcon("immagini//tratta.png"), "Seleziona Anno")
+        self.year_dropdown.addItem(QIcon("App Grafico Temporale Fatturati//immagini//tratta.png"), "Seleziona Anno")
         self.year_dropdown.currentTextChanged.connect(self.filter_by_year)
         right_layout.addWidget(self.year_dropdown)
 
-        self.show_all_button = CustomButton("", "immagini//annulla_filtro.png")
+        self.show_all_button = CustomButton("", "App Grafico Temporale Fatturati//immagini//annulla_filtro.png")
         self.show_all_button.setFixedSize(40, 40)
         self.show_all_button.clicked.connect(self.show_all_years)
         right_layout.addWidget(self.show_all_button)
 
-        self.load_source_button = CustomButton("", "immagini//dato.png")
+        self.load_source_button = CustomButton("", "App Grafico Temporale Fatturati//immagini//dato.png")
         self.load_source_button.setFixedSize(40, 40)
         self.load_source_button.clicked.connect(self.load_data_source)
         right_layout.addWidget(self.load_source_button)
@@ -238,7 +238,7 @@ class MyMainWindow(QMainWindow):
 
     def populate_year_dropdown(self, df):
         self.year_dropdown.clear()
-        self.year_dropdown.addItem(QIcon("immagini//tratta.png"), "Seleziona Anno")
+        self.year_dropdown.addItem(QIcon("App Grafico Temporale Fatturati//immagini//tratta.png"), "Seleziona Anno")
         years = df[self.date_col].dt.year.unique()
         for year in sorted(years):
             self.year_dropdown.addItem(str(year))
@@ -248,7 +248,7 @@ class MyMainWindow(QMainWindow):
         msg.setIcon(QMessageBox.Information)
         msg.setText(message)
         msg.setWindowTitle(title)
-        msg.setWindowIcon(QIcon("immagini//Plot.png"))
+        msg.setWindowIcon(QIcon("App Grafico Temporale Fatturati//immagini//Plot.png"))
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
 
@@ -340,13 +340,16 @@ class PlotCanvas(FigureCanvas):
     def update_plot(self, df, date_col, value_col):
         if not df.empty and date_col and value_col:
             try:
+                # Crea una copia del DataFrame all'inizio
+                working_df = df.copy()
+            
                 # Prepara i dati
-                df[date_col] = pd.to_datetime(df[date_col])
-                df['Year'] = df[date_col].dt.year
-                df['Month'] = df[date_col].dt.month
-                
+                working_df[date_col] = pd.to_datetime(working_df[date_col])
+                working_df['Year'] = working_df[date_col].dt.year
+                working_df['Month'] = working_df[date_col].dt.month
+            
                 # Pivot dei dati con mesi come indice e anni come colonne
-                pivot_df = df.pivot_table(
+                pivot_df = working_df.pivot_table(
                     values=value_col,
                     index='Month',
                     columns='Year',
@@ -366,7 +369,7 @@ class PlotCanvas(FigureCanvas):
                 # Crea il grafico ad aree impilate
                 x = range(1, 13)  # Mesi da 1 a 12
                 years = sorted(pivot_df.columns)
-                
+            
                 # Disegna le aree impilate
                 self.ax.stackplot(
                     x,
@@ -379,12 +382,10 @@ class PlotCanvas(FigureCanvas):
                 # Personalizza il grafico
                 self.ax.set_facecolor('#ffffff')
                 self.ax.grid(True, linestyle='--', linewidth=0.5, color='#bdc3c7', alpha=0.5)
-                
+            
                 # Nascondi i bordi
-                self.ax.spines['top'].set_visible(False)
-                self.ax.spines['right'].set_visible(False)
-                self.ax.spines['left'].set_visible(False)
-                self.ax.spines['bottom'].set_visible(False)
+                for spine in self.ax.spines.values():
+                    spine.set_visible(False)
 
                 # Imposta i label dei mesi sull'asse X
                 self.ax.set_xticks(range(1, 13))
@@ -399,13 +400,16 @@ class PlotCanvas(FigureCanvas):
                 self.ax.set_ylabel('Fatturato', fontsize=12, color='#2c3e50', fontweight='bold')
 
                 # Aggiungi la legenda degli anni
-                self.ax.legend(
+                legend = self.ax.legend(
                     title='Anni',
                     loc='upper left',
                     bbox_to_anchor=(1, 1),
                     fontsize=9,
                     title_fontsize=10
                 )
+                legend.get_frame().set_facecolor('#ffffff')
+                legend.get_frame().set_alpha(0.9)
+                legend.get_frame().set_edgecolor('#bdc3c7')
 
                 # Formatta i valori sull'asse y
                 def format_func(value, _):
@@ -419,42 +423,50 @@ class PlotCanvas(FigureCanvas):
                 self.ax.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
 
                 # Aggiungi titolo
-                self.ax.set_title('Fatturati Mensili per Anno', 
-                                fontsize=16, 
-                                fontweight='bold', 
-                                color='#2c3e50', 
-                                pad=20)
+                self.ax.set_title(
+                    'Fatturati Mensili per Anno', 
+                    fontsize=16, 
+                    fontweight='bold', 
+                    color='#2c3e50', 
+                    pad=20
+                )
 
                 # Aggiusta il layout per la legenda
                 self.fig.tight_layout()
 
-                # Aggiungi interattività per mostrare i valori
+                # Funzione per gestire l'interattività
                 def on_motion(event):
                     if event.inaxes == self.ax:
-                        # Trova il mese più vicino
                         x_val = event.xdata
                         if x_val is not None and 1 <= x_val <= 12:
+                            # Trova il mese più vicino
                             month_idx = int(round(x_val)) - 1
                             month = month_idx + 1
-                            
-                            # Calcola il valore totale per quel mese
-                            monthly_values = [f"{year}: €{pivot_df.loc[month, year]:,.2f}" 
-                                           for year in years]
-                            total = pivot_df.loc[month].sum()
-                            
+                        
                             # Rimuovi le annotazioni precedenti
                             for artist in self.ax.texts:
                                 if hasattr(artist, 'is_tooltip'):
                                     artist.remove()
-                            
-                            # Aggiungi la nuova annotazione
+                        
+                            # Calcola i valori per ogni anno
+                            monthly_values = []
+                            total = 0
+                            for year in years:
+                                value = pivot_df.loc[month, year]
+                                total += value
+                                if value > 0:  # Mostra solo gli anni con valori positivi
+                                    monthly_values.append(f"{year}: €{value:,.2f}")
+                        
+                            # Crea il testo del tooltip
                             tooltip_text = f"Mese: {self.abbreviazioni_mesi[month]}\n"
                             tooltip_text += "\n".join(monthly_values)
                             tooltip_text += f"\nTotale: €{total:,.2f}"
-                            
+                        
+                            # Posiziona il tooltip
+                            y_pos = pivot_df.loc[month].sum() / 2
                             tooltip = self.ax.annotate(
                                 tooltip_text,
-                                xy=(month, pivot_df.loc[month].sum()/2),
+                                xy=(month, y_pos),
                                 xytext=(10, 10),
                                 textcoords='offset points',
                                 bbox=dict(
@@ -467,15 +479,22 @@ class PlotCanvas(FigureCanvas):
                                 fontsize=9
                             )
                             tooltip.is_tooltip = True
+                        
+                            # Aggiorna il canvas
                             self.draw_idle()
 
+                # Connetti l'evento di movimento del mouse
                 self.mpl_connect('motion_notify_event', on_motion)
 
-                # Update the canvas
+                # Aggiorna il canvas
                 self.draw()
 
             except Exception as e:
-                QMessageBox.critical(self.parent(), "Errore", f"Errore nell'aggiornare il grafico: {str(e)}")
+                QMessageBox.critical(
+                    self.parent(),
+                    "Errore",
+                    f"Errore nell'aggiornare il grafico: {str(e)}"
+                )
                 return
 
     def load_external_data(self, df, date_col, value_col):
