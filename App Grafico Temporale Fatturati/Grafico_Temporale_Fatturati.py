@@ -114,7 +114,7 @@ class MyMainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Grafico Temporale Fatturati")
-        self.setWindowIcon(QIcon("App Grafico Temporale Fatturati//immagini//Plot.png"))
+        self.setWindowIcon(QIcon("immagini//Plot.png"))
         self.init_ui()
         self.df = pd.DataFrame()
         self.filtered_df = pd.DataFrame()
@@ -160,7 +160,7 @@ class MyMainWindow(QMainWindow):
 
         # pulsante Download CSV
         left_layout = QHBoxLayout()
-        self.download_button = CustomButton("Fatturati", "App Grafico Temporale Fatturati//immagini//CSV.png")
+        self.download_button = CustomButton("Fatturati", "immagini//CSV.png")
         self.download_button.clicked.connect(self.download_csv)
         left_layout.addWidget(self.download_button)
         left_layout.addStretch()  
@@ -168,16 +168,16 @@ class MyMainWindow(QMainWindow):
         # Filtro Anno - menù a tendina
         right_layout = QHBoxLayout()
         self.year_dropdown = CustomComboBox(self)
-        self.year_dropdown.addItem(QIcon("App Grafico Temporale Fatturati//immagini//tratta.png"), "Seleziona Anno")
+        self.year_dropdown.addItem(QIcon("immagini//tratta.png"), "Seleziona Anno")
         self.year_dropdown.currentTextChanged.connect(self.filter_by_year)
         right_layout.addWidget(self.year_dropdown)
 
-        self.show_all_button = CustomButton("", "App Grafico Temporale Fatturati//immagini//annulla_filtro.png")
+        self.show_all_button = CustomButton("", "immagini//annulla_filtro.png")
         self.show_all_button.setFixedSize(40, 40)
         self.show_all_button.clicked.connect(self.show_all_years)
         right_layout.addWidget(self.show_all_button)
 
-        self.load_source_button = CustomButton("", "App Grafico Temporale Fatturati//immagini//dato.png")
+        self.load_source_button = CustomButton("", "immagini//dato.png")
         self.load_source_button.setFixedSize(40, 40)
         self.load_source_button.clicked.connect(self.load_data_source)
         right_layout.addWidget(self.load_source_button)
@@ -238,7 +238,7 @@ class MyMainWindow(QMainWindow):
 
     def populate_year_dropdown(self, df):
         self.year_dropdown.clear()
-        self.year_dropdown.addItem(QIcon("App Grafico Temporale Fatturati//immagini//tratta.png"), "Seleziona Anno")
+        self.year_dropdown.addItem(QIcon("immagini//tratta.png"), "Seleziona Anno")
         years = df[self.date_col].dt.year.unique()
         for year in sorted(years):
             self.year_dropdown.addItem(str(year))
@@ -248,7 +248,7 @@ class MyMainWindow(QMainWindow):
         msg.setIcon(QMessageBox.Information)
         msg.setText(message)
         msg.setWindowTitle(title)
-        msg.setWindowIcon(QIcon("App Grafico Temporale Fatturati//immagini//Plot.png"))
+        msg.setWindowIcon(QIcon("immagini//Plot.png"))
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
 
