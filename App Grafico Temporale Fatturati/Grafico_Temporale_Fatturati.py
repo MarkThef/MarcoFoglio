@@ -127,7 +127,7 @@ class MyMainWindow(QMainWindow):
         main_layout = QVBoxLayout()
         central_widget.setLayout(main_layout)
 
-        # Add a title label
+        # Aggiungi Titolo
         title_label = QLabel("Grafico Temporale Fatturati")
         title_label.setAlignment(Qt.AlignCenter)
         title_label.setFont(QFont('Segoe UI', 18, QFont.Bold))
@@ -139,7 +139,7 @@ class MyMainWindow(QMainWindow):
             9: 'Set', 10: 'Ott', 11: 'Nov', 12: 'Dic'
         }
 
-        # Create a frame for the plot
+        # Crea un frame per il grafico
         plot_frame = QFrame()
         plot_frame.setFrameShape(QFrame.StyledPanel)
         plot_frame.setStyleSheet("background-color: white; border-radius: 10px;")
@@ -153,19 +153,19 @@ class MyMainWindow(QMainWindow):
 
         main_layout.addWidget(plot_frame)
 
-        # Control panel
+        # pannello di controllo
         control_panel = QFrame()
         control_panel.setStyleSheet("background-color: #f0f0f0; border-radius: 10px; padding: 10px;")
         control_layout = QHBoxLayout(control_panel)
 
-        # Left side - Download CSV button
+        # pulsante Download CSV
         left_layout = QHBoxLayout()
         self.download_button = CustomButton("Fatturati", "App Grafico Temporale Fatturati//immagini//CSV.png")
         self.download_button.clicked.connect(self.download_csv)
         left_layout.addWidget(self.download_button)
-        left_layout.addStretch()  # This pushes the button to the left
+        left_layout.addStretch()  
 
-        # Right side - Year dropdown, Show all button, Load source button
+        # Filtro Anno - menù a tendina
         right_layout = QHBoxLayout()
         self.year_dropdown = CustomComboBox(self)
         self.year_dropdown.addItem(QIcon("App Grafico Temporale Fatturati//immagini//tratta.png"), "Seleziona Anno")
@@ -182,9 +182,9 @@ class MyMainWindow(QMainWindow):
         self.load_source_button.clicked.connect(self.load_data_source)
         right_layout.addWidget(self.load_source_button)
 
-        # Add left and right layouts to the main control layout
+        
         control_layout.addLayout(left_layout)
-        control_layout.addStretch()  # This creates space between left and right sides
+        control_layout.addStretch()  
         control_layout.addLayout(right_layout)
 
         main_layout.addWidget(control_panel)
@@ -195,7 +195,7 @@ class MyMainWindow(QMainWindow):
             self.canvas.update_plot(self.filtered_df, self.date_col, self.value_col)
 
     def show_all_years(self):
-        self.year_dropdown.setCurrentIndex(0)  # Reset dropdown selection
+        self.year_dropdown.setCurrentIndex(0) 
         self.filtered_df = self.df
         self.canvas.update_plot(self.df, self.date_col, self.value_col)
 
