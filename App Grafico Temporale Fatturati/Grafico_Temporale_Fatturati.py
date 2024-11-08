@@ -100,12 +100,12 @@ class CustomNavigationToolbar(NavigationToolbar):
         self.addAction(self._actions['save_figure'])
 
         # Personalizza le icone
-        self._actions['home'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//reset.png'))
-        self._actions['back'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//sinistra.png'))
-        self._actions['forward'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//destra.png'))
-        self._actions['pan'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//trascina.png'))
-        self._actions['zoom'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//zoom.png'))
-        self._actions['save_figure'].setIcon(QIcon('App Grafico Temporale Fatturati//immagini//fotografia.png'))
+        self._actions['home'].setIcon(QIcon('immagini//reset.png'))
+        self._actions['back'].setIcon(QIcon('immagini//sinistra.png'))
+        self._actions['forward'].setIcon(QIcon('immagini//destra.png'))
+        self._actions['pan'].setIcon(QIcon('immagini//trascina.png'))
+        self._actions['zoom'].setIcon(QIcon('immagini//zoom.png'))
+        self._actions['save_figure'].setIcon(QIcon('immagini//fotografia.png'))
 
     def set_message(self, s):
         pass
